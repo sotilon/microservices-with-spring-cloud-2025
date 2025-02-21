@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "1e024e93-39d8-4869-996f-79bc4fd1f1fe",
+		"name": "tareafinalsel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "5424543"
+	},
+	"item": [
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\":\"27829372893728\",\r\n    \"bankName\":\"bcp\",\r\n    \"cardHolderName\":\"Jaime Enriquez\",\r\n    \"cvvCode\":890,\r\n    \"expirationDate\":\"2027-07-04T20:38:38.604Z\",\r\n    \"cardType\":\"visa\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9040/card/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card_gate",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\":\"27829372893728\",\r\n    \"bankName\":\"bcp\",\r\n    \"cardHolderName\":\"Jaime Enriquez\",\r\n    \"cvvCode\":890,\r\n    \"expirationDate\":\"2027-07-04T20:38:38.604Z\",\r\n    \"cardType\":\"visa\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/card/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"27829372893728\",\r\n    \"minimumBalance\": 8979,\r\n    \"currentBalance\": 100,\r\n    \"interestRate\": 890\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9010/account/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9010/account/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account_gate",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"27829372893728\",\r\n    \"minimumBalance\": 8979,\r\n    \"currentBalance\": 100,\r\n    \"interestRate\": 890\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9010/account/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/account/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "credit",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\": \"27829372893728\",\r\n    \"cardType\": \"bcp\",\r\n    \"customerCode\": \"6786nmbnmbnmbnbhbhj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9020/credit/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9020/credit/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "credit_gate",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\": \"27829372893728\",\r\n    \"cardType\": \"bcp\",\r\n    \"customerCode\": \"6786nmbnmbnmbnbhbhj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9020/credit/save"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/credit/list"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"6382f58656c73c7073190f39\",\r\n        \"cardNumber\": \"27829372893728\",\r\n        \"bankName\": null,\r\n        \"cardHolderName\": null,\r\n        \"cvvCode\": null,\r\n        \"expirationDate\": null,\r\n        \"cardType\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9040/card/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/customer/list"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Jaime\",\r\n    \"lastName\":\"Enriquez\",\r\n    \"code\":\"4218191\",\r\n    \"email\":\"jaime@hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/customer/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"63843d29cfcaf30e5450e97c\",\r\n        \"firstName\": \"Jaime\",\r\n        \"lastName\": \"Enriquez\",\r\n        \"code\": null,\r\n        \"email\": \"jaime@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/customer/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer_gate",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/customer/list"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Jaime\",\r\n    \"lastName\":\"Enriquez\",\r\n    \"code\":\"4218191\",\r\n    \"email\":\"jaime@hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9095/customer/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"63843d29cfcaf30e5450e97c\",\r\n        \"firstName\": \"Jaime\",\r\n        \"lastName\": \"Enriquez\",\r\n        \"code\": null,\r\n        \"email\": \"jaime@hotmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/customer/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9030/transaction/list"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromAccountNumber\": \"233444343423422342\",\r\n    \"toAccountNumber\": \"12323232323234343\",\r\n    \"typeCode\": \"SD343\",\r\n    \"debit\": \"1000\",\r\n    \"credit\": \"2000\",\r\n    \"status\": \"pending\",\r\n    \"description\": \"pay gifs\",\r\n    \"transactionType\": \"ok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"638592c8ad6e0a3f42405625\",\r\n        \"fromAccountNumber\": null,\r\n        \"toAccountNumber\": null,\r\n        \"typeCode\": null,\r\n        \"debit\": null,\r\n        \"credit\": null,\r\n        \"status\": null,\r\n        \"description\": null,\r\n        \"transactionType\": null,\r\n        \"port\": 9030\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction_gate",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/transaction/list"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromAccountNumber\": \"233444343423422342\",\r\n    \"toAccountNumber\": \"12323232323234343\",\r\n    \"typeCode\": \"SD343\",\r\n    \"debit\": \"1000\",\r\n    \"credit\": \"2000\",\r\n    \"status\": \"pending\",\r\n    \"description\": \"pay gifs\",\r\n    \"transactionType\": \"ok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"638592c8ad6e0a3f42405625\",\r\n        \"fromAccountNumber\": null,\r\n        \"toAccountNumber\": null,\r\n        \"typeCode\": null,\r\n        \"debit\": null,\r\n        \"credit\": null,\r\n        \"status\": null,\r\n        \"description\": null,\r\n        \"transactionType\": null,\r\n        \"port\": 9030\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9050/wallet/list"
+					},
+					"response": []
+				},
+				{
+					"name": "findBy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9050/wallet/1"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"233444343423422342\",\r\n    \"mount\": 5,\r\n    \"description\": \"compra de lapiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9050/wallet/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"638592c8ad6e0a3f42405625\",\r\n        \"fromAccountNumber\": null,\r\n        \"toAccountNumber\": null,\r\n        \"typeCode\": null,\r\n        \"debit\": null,\r\n        \"credit\": null,\r\n        \"status\": null,\r\n        \"description\": null,\r\n        \"transactionType\": null,\r\n        \"port\": 9030\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet_gate",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/wallet/list"
+					},
+					"response": []
+				},
+				{
+					"name": "findBy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9050/wallet/1"
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"233444343423422342\",\r\n    \"mount\": 5,\r\n    \"description\": \"compra de lapiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9050/wallet/save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"638592c8ad6e0a3f42405625\",\r\n        \"fromAccountNumber\": null,\r\n        \"toAccountNumber\": null,\r\n        \"typeCode\": null,\r\n        \"debit\": null,\r\n        \"credit\": null,\r\n        \"status\": null,\r\n        \"description\": null,\r\n        \"transactionType\": null,\r\n        \"port\": 9030\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9030/transaction/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "configuration",
+			"item": [
+				{
+					"name": "transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-transaction-dev.properties"
+					},
+					"response": []
+				},
+				{
+					"name": "card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-card-dev.properties"
+					},
+					"response": []
+				},
+				{
+					"name": "account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-account-dev.properties"
+					},
+					"response": []
+				},
+				{
+					"name": "customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-customer-dev.properties"
+					},
+					"response": []
+				},
+				{
+					"name": "credit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-credit-dev.properties"
+					},
+					"response": []
+				},
+				{
+					"name": "wallet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9080/api-wallet-dev.properties"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eureka",
+			"item": [
+				{
+					"name": "eureka",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9090/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9095/health"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
