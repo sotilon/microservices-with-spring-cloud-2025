@@ -1,0 +1,4 @@
+spring.application.name=api-account
+spring.cloud.config.profile=dev
+
+spring.cloud.config.uri=http://localhost:8002

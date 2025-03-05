@@ -2,7 +2,7 @@
 
 ###### Functionalities:
  * port:
- ` 9080
+ ` 8002
  `
   ###### Integration:
    * github.
@@ -10,5 +10,8 @@
 ######  Environment Variables:
 
  ``` 
-java 11
+java 21
 ```
+
+https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server
+

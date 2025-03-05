@@ -1,0 +1,11 @@
+ curl -H "Accept: application/json" http://localhost:9090/eureka/apps
+
+curl -H "Accept: application/json" http://localhost:8761/eureka/apps/my-microservice
+
+Method	How to Use
+Eureka Dashboard	Open http://localhost:8761 in a browser
+REST API (All Services)	http://localhost:8761/eureka/apps
+REST API (Specific Service)	http://localhost:8761/eureka/apps/{service-name}
+
+
+curl -H "Accept: application/json" http://localhost:9090/actuator/health

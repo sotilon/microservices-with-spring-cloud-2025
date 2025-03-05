@@ -1,0 +1,63 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: api-customer
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8002
+      #import: "optional:configserver:http://localhost:8002"
+  data:
+    mongodb:
+      #uri: mongodb://admin:admin123456@localhost:27017/db_customer
+      uri: mongodb://admin:admin123456@localhost:27017/db_customer?authSource=admin
+  redis:
+    host: localhost
+    port: 6379
+    password: 87654321
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8001/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false
+  circuitbreaker:
+    enabled: true
+  retry:
+    enabled: false  # Disable Feign retry to allow Circuit Breaker to trigger
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      accountServiceCircuitBreaker:
+        failureRateThreshold: 50
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2000
+        permittedNumberOfCallsInHalfOpenState: 2
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 5000
+
+# Expose Actuator endpoints.  Allow application to be more useful from Eureka.
+management.endpoints.web.exposure.include: health,info,beans,env,configprops,mappings
+management.info:
+  env.enabled: true
+  java.enabled: true
+  os.enabled: true
+  process.enabled: true
+info.active-profiles: ${spring.profiles.active:none}
+info.name: ${spring.application.name:none}
+

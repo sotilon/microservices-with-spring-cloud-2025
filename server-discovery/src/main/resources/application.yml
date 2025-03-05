@@ -1,0 +1,24 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: service-discovery
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false  # No se registrará a sí mismo como cliente
+    fetchRegistry: false # No intentará obtener la lista de servicios registrados
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
