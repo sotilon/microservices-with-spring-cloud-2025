@@ -1,13 +1,6 @@
-GET http://localhost:8003/api/v1/accounts
+#get all accounts
+GET http://localhost:8003/api/v1/account/accounts
 
-GET http://localhost:8003/api/v1/account/3
-
-#find products for fill as client product using vertx client, find by customer id
-GET http://localhost:8003/api/v1/customer/1/product
-
-#find products for fill as client product using stork client, find by customer id
-#GET http://localhost:8003/api/v1/customer/findById/1
-
-#find products for fill as client product using stork client, find by customer id
-GET http://localhost:8003/api/v1//customer/findProductFillByCustomerId/1
+#get account by id
+GET http://localhost:8003/api/v1/account/account/3
 

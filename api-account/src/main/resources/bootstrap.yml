@@ -1,4 +1,15 @@
 spring:
+  application:
+    name: api-account
   cloud:
+#    discovery:
+#      enabled: true
     config:
-      uri: http://localhost:8002
+      profile: dev
+      uri: ${CONFIG_SERVER:http://localhost:8002}
+#      fail-fast: true
+#      retry:
+#        maxAttempts: 20
+#        initialInterval: 1000
+#        multiplier: 1.5
+#        maxInterval: 5000

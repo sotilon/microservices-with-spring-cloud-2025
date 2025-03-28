@@ -5,18 +5,32 @@ spring:
   application:
     name: api-account
   cloud:
+#    discovery:
+#      enabled: true
     config:
       profile: dev
-      uri: http://localhost:8002
+      uri: ${CONFIG_SERVER:http://localhost:8002}
+#      fail-fast: true
+#      retry:
+#        maxAttempts: 20
+#        initialInterval: 1000
+#        multiplier: 1.5
+#        maxInterval: 5000
   cache:
     type: caffeine
     caffeine:
       spec: maximumSize=100,expireAfterWrite=1m
+  datasource:
+    url: ${POSTGRESQL_URL:jdbc:postgresql://localhost:5432/db_ABC_Account}
+    username: postgres
+    password: jenriquez
+    driver-class-name: org.postgresql.Driver
 
 eureka:
   client:
     serviceUrl:
-      defaultZone:  http://localhost:8001/eureka/
+      defaultZone: ${EUREKA_SERVER:http://localhost:8001/eureka/}
+
 
 # Expose Actuator endpoints.  Allow application to be more useful from Eureka.
 management.endpoints.web.exposure.include: health,info,beans,env,configprops,mappings

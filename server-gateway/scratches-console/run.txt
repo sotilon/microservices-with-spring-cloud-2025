@@ -1,0 +1,21 @@
+# Construir los JARs de cada servicio
+mvn clean package -DskipTests
+
+mvn clean package -DskipTests
+docker build -f src/main/docker/Dockerfile -t spcloud/service-gateway .
+
+curl http://localhost:8000/api/v1/gateway/status
+
+curl -X GET http://localhost:8080/actuator/health
+curl -X GET http://localhost:8080/actuator/info
+
+
+docker exec -it service-gateway sh curl http://service-config:8002/service-gateway/dev
+
+docker network inspect my-network
+
+
+--------------------------------k8s
+docker tag spcloud/service-gateway jaimesotil/service-gateway:v1.0.0
+docker push jaimesotil/service-gateway:v1.0.0
+

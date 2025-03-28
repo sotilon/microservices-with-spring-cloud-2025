@@ -1,0 +1,14 @@
+# Construir los JARs de cada servicio
+mvn clean package -DskipTests
+./mvnw clean package -DskipTests
+
+docker build -f src/main/docker/Dockerfile -t spcloud/service-config .
+------------------------------------k8s
+generate tag
+
+docker tag spcloud/service-config jaimesotil/service-config:v1.0.0
+docker push jaimesotil/service-config:v1.0.0
+
+
+
+

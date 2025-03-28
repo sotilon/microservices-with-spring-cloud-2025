@@ -1,16 +1,12 @@
-GET http://localhost:8004/api/v1/list
+# get all customers
+GET http://localhost:8004/api/v1/customer/list
 
-#find accounts using feign
-GET http://localhost:8004/api/v1/accounts
+# get by customer id
+GET http://localhost:8004/api/v1/customer/67c4c5314cd0133857074a5a
 
-GET http://localhost:8004/api/v1/account/3
+#find all accounts from api-account using feign
+GET http://localhost:8004/api/v1/customer/accounts
 
-#find products for fill as client product using vertx client, find by customer id
-GET http://localhost:8082/api/v1/customer/1/product
-
-#find products for fill as client product using stork client, find by customer id
-#GET http://localhost:8082/api/v1/customer/findById/1
-
-#find products for fill as client product using stork client, find by customer id
-GET http://localhost:8082/api/v1//customer/findProductFillByCustomerId/1
+#find by account id  from api-account using feign
+GET http://localhost:8004/api/v1/customer/account/3
 

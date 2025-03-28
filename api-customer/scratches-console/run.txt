@@ -1,55 +1,13 @@
-docker build -f src/main/docker/Dockerfile.jvm -t quarkus/ms-quarkus-customer-api-jvm .
+# Construir los JARs de cada servicio
+mvn clean package -DskipTests
 
-docker-compose  down
-docker-compose  up -d
-docker-compose  up -d --build
+docker build -f src/main/docker/Dockerfile -t spcloud/api-customer .
 
---inspect
-docker inspect bank-abc-consul | grep IPAddress
+curl http://localhost:8000/api/v1/gateway/status
 
---NETWORK
-docker network ls
-docker network connect kong-net bank-abc-consul
+curl -X GET http://localhost:8080/actuator/health
+curl -X GET http://localhost:8080/actuator/info
 
+docker exec -it api-customer sh curl http://service-config:8002/api-customer/dev
 
---docker exec
-docker exec -it postgres_db psql -U quarkus_user -d postgres -c "\l"
-docker exec -it postgres_db psql -U quarkus_user -d postgres -c "CREATE DATABASE product_db;"
---Test the Database Connection
-docker exec -it postgres_db psql -U quarkus_user -d product_db -c "\dt"
-docker exec -it <mysql-container-name> mysql -u root -p
-
-docker volume ls
-
---Restart Only Specific Services
-docker-compose restart
---If you want to refresh your Docker Compose services without rebuilding the database and volume, you can use the following command:
-docker compose down && docker compose up -d
-docker compose down --volumes  # This will DELETE all volumes (database data)
-docker compose up -d --build   # This will REBUILD all images
-
-Action	                                                      Command
-Restart all services without rebuilding	                  | docker compose down && docker compose up -d
-Restart only a specific service	docker                    | docker compose restart product-app
-Stop and restart all services (without removing anything) | 	docker compose stop && docker compose up -d
-
-
-docker logs -f ms-quarkus-customer-api | grep "ERROR"
-docker logs -f -t ms-quarkus-customer-api
-docker inspect <mysql-container-name> | grep IPAddress
-
---consul
-curl http://localhost:8500/v1/agent/services | jq
-
-`curl http://localhost:8500/v1/health/service/my-service	jq`
-`curl http://localhost:8500/v1/agent/checks	jq`
-`curl http://localhost:8500/v1/health/state/passing	jq`
-`curl http://localhost:8500/v1/health/state/critical	jq`
-curl -v http://localhost:8081/health	Check the service's own health endpoint.
-`docker exec -it consul curl http://localhost:8500/v1/health/service/my-service	jq`
-
-docker volume ls
-
-
-
-
+docker network inspect my-network

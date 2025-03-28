@@ -1,0 +1,27 @@
+#get all accounts
+GET http://localhost:8000/api/v1/account/accounts
+
+#get account by id
+GET http://localhost:8000/api/v1/account/account/3
+
+
+POST http://localhost:8000/api/v1/account/save
+Content-Type:application/json
+  {
+    "accountNumber": "ACC54321",
+    "minimumBalance": 200.00,
+    "currentBalance": 6000.00,
+    "interestRate": 2.50
+  }
+
+
+DEL http://localhost:8000/api/v1/account/delete
+Content-Type:application/json
+  {
+    "accountNumber": "ACC54321",
+    "minimumBalance": 200.00,
+    "currentBalance": 6000.00,
+    "interestRate": 2.50
+  }
+
+

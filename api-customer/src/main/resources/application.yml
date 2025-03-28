@@ -7,49 +7,43 @@ spring:
   cloud:
     config:
       profile: dev
-      uri: http://localhost:8002
+      uri: ${CONFIG_SERVER:http://localhost:8002}
       #import: "optional:configserver:http://localhost:8002"
   data:
     mongodb:
       #uri: mongodb://admin:admin123456@localhost:27017/db_customer
-      uri: mongodb://admin:admin123456@localhost:27017/db_customer?authSource=admin
+      uri: ${MONGO_URI:mongodb://admin:admin123456@localhost:27017/db_customer?authSource=admin}
   redis:
-    host: localhost
+    host: ${REDIS_HOST:localhost}
     port: 6379
     password: 87654321
 
 eureka:
   client:
     serviceUrl:
-      defaultZone:  http://localhost:8001/eureka/
+      defaultZone: ${EUREKA_SERVER:http://localhost:8001/eureka/}
 
 feign:
   client:
     config:
       default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: full
-  httpclient:
-    enabled: true
-  okhttp:
-    enabled: false
-  circuitbreaker:
-    enabled: true
-  retry:
-    enabled: false  # Disable Feign retry to allow Circuit Breaker to trigger
+        retryer:
+          period: 1000  # Espera 1 segundo antes del primer reintento
+          maxPeriod: 3000  # Máximo tiempo entre reintentos
+          maxAttempts: 3  # Máximo 3 intentos
+
 
 resilience4j:
   circuitbreaker:
     instances:
       accountServiceCircuitBreaker:
-        failureRateThreshold: 50
-        slowCallRateThreshold: 50
-        slowCallDurationThreshold: 2000
-        permittedNumberOfCallsInHalfOpenState: 2
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5
-        waitDurationInOpenState: 5000
+        failureRateThreshold: 50  # 50 percent fail open
+        slowCallRateThreshold: 50 # 50 percent slow open
+        slowCallDurationThreshold: 2000 # 2 seg slow call duration open
+        permittedNumberOfCallsInHalfOpenState: 2 # 2  call test
+        slidingWindowSize: 10 # 10 call analysis
+        minimumNumberOfCalls: 2 # 2 call register
+        waitDurationInOpenState: 3000 # 3 seg open
 
 # Expose Actuator endpoints.  Allow application to be more useful from Eureka.
 management.endpoints.web.exposure.include: health,info,beans,env,configprops,mappings
